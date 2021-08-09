@@ -1,0 +1,6 @@
+app_name     = "animacom"
+rds_db_name  = "animacom_db"
+rds_username = "root"
+rds_password = "password"
+bucket       = "animacom-remote-state"
+master_key   = "39816d1ffbdf0b2499d926a0b355dada"
