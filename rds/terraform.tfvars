@@ -1,0 +1,5 @@
+app_name    = "animacom"
+db_name     = "animacom"
+db_username = "root"
+db_password = "password"
+bucket      = "animacom-remote-state"
