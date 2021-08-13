@@ -61,7 +61,7 @@ resource "aws_ecs_service" "ecs_service" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.target_group.arn
-    container_name   = "nginx"
+    container_name   = "animacom_server"
     container_port   = 80
   }
 }

@@ -1,15 +1,15 @@
 [
     {
-      "name": "nginx",
-      "image": "${account_id}.dkr.ecr.ap-northeast-1.amazonaws.com/nginx:latest",
+      "name": "animacom_server",
+      "image": "${account_id}.dkr.ecr.ap-northeast-1.amazonaws.com/animacom_server:latest",
       "essential": true,
       "memory": 128,
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
           "awslogs-region": "ap-northeast-1",
-          "awslogs-stream-prefix": "nginx",
-          "awslogs-group": "/ecs/animacom/nginx"
+          "awslogs-stream-prefix": "animacom_server",
+          "awslogs-group": "/ecs/animacom/animacom_server"
         }
       },
       "portMappings": [
@@ -20,16 +20,16 @@
       ]
     },
     {
-      "name": "rails",
-      "image":"${account_id}.dkr.ecr.ap-northeast-1.amazonaws.com/rails:latest",
+      "name": "animacom_api",
+      "image":"${account_id}.dkr.ecr.ap-northeast-1.amazonaws.com/animacom_api:latest",
       "essential": true,
       "memory": 128,
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
           "awslogs-region": "ap-northeast-1",
-          "awslogs-stream-prefix": "rails",
-          "awslogs-group": "/ecs/animacom/rails"
+          "awslogs-stream-prefix": "animacom_api",
+          "awslogs-group": "/ecs/animacom/animacom_api"
         }
       },
       "command": ["bundle","exec","puma","-C","config/puma.rb"],
@@ -73,8 +73,8 @@
       ],
       "portMappings": [
         {
-          "containerPort": 3000,
-          "hostPort": 3000
+          "containerPort": 3001,
+          "hostPort": 3001
         }
       ]
     }

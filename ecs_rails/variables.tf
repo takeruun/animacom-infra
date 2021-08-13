@@ -11,7 +11,7 @@ variable "bucket" {}
 variable "master_key" {}
 
 variable "containers_name" {
-  default = ["nginx", "rails"]
+  default = ["animacom_server", "animacom_api"]
 }
 
 variable "aws_region" {
