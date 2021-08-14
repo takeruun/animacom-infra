@@ -4,11 +4,16 @@ data "template_file" "container_definitions" {
   template = file("container_definitions.json")
 
   vars = {
-    account_id   = local.account_id
-    rds_host     = data.terraform_remote_state.rds.outputs.db_address
-    rds_username = var.rds_username
-    rds_password = var.rds_password
-    rds_db_name  = var.rds_db_name
+    account_id            = local.account_id
+    rds_host              = data.terraform_remote_state.rds.outputs.db_address
+    rds_username          = var.rds_username
+    rds_password          = var.rds_password
+    rds_db_name           = var.rds_db_name
+    s3_image_bucket       = "s3_image_bucket"
+    s3_asset_host         = "s3_asset_host"
+    aws_access_key_id     = "aws_access_key_id"
+    aws_secret_access_key = "aws_secret_access_key"
+    redis_url             = "redis_url"
 
     master_key = var.master_key
   }

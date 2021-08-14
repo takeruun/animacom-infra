@@ -69,6 +69,26 @@
         {
           "name": "RAILS_SERVE_STATIC_FILES",
           "value": "true"
+        },
+        {
+          "name": "S3_IMAGE_BUCKET",
+          "value": "${s3_image_bucket}"
+        },
+        {
+          "name": "S3_ASSET_HOST",
+          "value": "${s3_asset_host}"
+        },
+        {
+          "name": "AWS_ACCESS_KEY_ID",
+          "value": "${aws_access_key_id}"
+        },
+        {
+          "name": "AWS_SECRET_ACCESS_KEY",
+          "value": "${aws_secret_access_key}"
+        },
+        {
+          "name": "REDIS_URL",
+          "value": "${redis_url}"
         }
       ],
       "portMappings": [
