@@ -10,6 +10,12 @@ variable "bucket" {}
 
 variable "master_key" {}
 
+variable "domain" {}
+
+variable "s3_user_aws_access_key_id" {}
+
+variable "s3_user_aws_secret_access_key" {}
+
 variable "containers_name" {
   default = ["animacom_server", "animacom_api"]
 }

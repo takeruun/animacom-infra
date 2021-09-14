@@ -9,11 +9,11 @@ data "template_file" "container_definitions" {
     rds_username          = var.rds_username
     rds_password          = var.rds_password
     rds_db_name           = var.rds_db_name
-    s3_image_bucket       = "s3_image_bucket"
-    s3_asset_host         = "http://s3_asset_host"
-    aws_access_key_id     = "aws_access_key_id"
-    aws_secret_access_key = "aws_secret_access_key"
-    redis_url             = "http://redis_url"
+    s3_image_bucket       = data.terraform_remote_state.s3_images.outputs.bucket_name
+    s3_asset_host         = "https://image.${var.domain}"
+    aws_access_key_id     = var.s3_user_aws_access_key_id
+    aws_secret_access_key = var.s3_user_aws_secret_access_key
+    redis_url             = "redis://${data.terraform_remote_state.redis.outputs.redis_url}:6379"
 
     master_key = var.master_key
   }
