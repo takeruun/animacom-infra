@@ -87,6 +87,10 @@
           "value": "${aws_secret_access_key}"
         },
         {
+          "name": "AWS_DEFAULT_REGION",
+          "value": "ap-northeast-1"
+        },
+        {
           "name": "REDIS_URL",
           "value": "${redis_url}"
         }
