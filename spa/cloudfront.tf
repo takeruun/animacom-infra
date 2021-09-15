@@ -16,20 +16,11 @@ resource "aws_s3_bucket_policy" "this" {
   policy = data.template_file.s3_policy.rendered
 }
 
-resource "aws_s3_bucket_public_access_block" "this" {
-  bucket = aws_s3_bucket.this.id
-
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
-}
-
 resource "aws_cloudfront_distribution" "this" {
   aliases = [var.domain]
 
   origin {
-    domain_name = aws_s3_bucket.this.bucket_domain_name
+    domain_name = aws_s3_bucket.this.bucket_regional_domain_name
     origin_id   = local.s3_origin_id
 
     s3_origin_config {
