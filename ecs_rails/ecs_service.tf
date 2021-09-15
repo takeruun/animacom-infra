@@ -47,12 +47,12 @@ resource "aws_lb_listener_rule" "https_rule" {
 }
 
 resource "aws_ecs_service" "ecs_service" {
-  name            = "${var.app_name}-service"
-  launch_type     = "FARGATE"
-  desired_count   = "1"
-  cluster         = aws_ecs_cluster.this.name
-  task_definition = aws_ecs_task_definition.task_definition.arn
-
+  name                   = "${var.app_name}-service"
+  launch_type            = "FARGATE"
+  desired_count          = "1"
+  cluster                = aws_ecs_cluster.this.name
+  task_definition        = aws_ecs_task_definition.task_definition.arn
+  enable_execute_command = true
   network_configuration {
     security_groups  = [data.terraform_remote_state.alb.outputs.alb_security_group]
     subnets          = data.terraform_remote_state.network.outputs.public_subnet_ids
