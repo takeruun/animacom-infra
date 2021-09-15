@@ -34,3 +34,7 @@ data "aws_iam_policy_document" "ecs_task_execution" {
     resources = ["*"]
   }
 }
+
+data "template_file" "ssm_policy" {
+  template = file("ssm_policy.json")
+}
