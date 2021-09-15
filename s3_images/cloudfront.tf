@@ -6,7 +6,7 @@ resource "aws_cloudfront_distribution" "this" {
   aliases = ["image.${var.domain}"]
 
   origin {
-    domain_name = aws_s3_bucket.this.bucket_domain_name
+    domain_name = aws_s3_bucket.this.bucket_regional_domain_name
     origin_id   = local.s3_origin_id
 
     s3_origin_config {
@@ -49,7 +49,7 @@ resource "aws_cloudfront_distribution" "this" {
 
 resource "aws_route53_record" "site" {
   type    = "A"
-  name    = "images.${var.domain}"
+  name    = "image.${var.domain}"
   zone_id = data.aws_route53_zone.this.zone_id
 
   alias {
