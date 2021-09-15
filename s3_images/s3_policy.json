@@ -1,6 +1,6 @@
 {
-  "Version": "2008-10-17",
-  "Id": "PolicyForCloudFrontPrivateContent",
+  "Version": "2012-10-17",
+  "Id": "PolicyForCloudFrontPrivateContentAndFromApiSever",
   "Statement": [
     {
       "Sid": "1",
@@ -10,6 +10,17 @@
       },
       "Action": ["s3:GetObject"],
       "Resource": ["arn:aws:s3:::${bucket_name}/*"]
+    },
+    {
+      "Sid": "Stmt1631667731681",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::${bucket_name}",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::${account_id}:user/animacom-s3-user"
+        ]
+      }
     }
   ]
 }
