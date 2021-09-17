@@ -1,13 +1,50 @@
-animacom インフラのコードです。
+# Animacom
+自分のペットを共有し合うSNSサイト
+(開発中）
 
-1. 初期化(各ディレクトリで実行)
-   `terraform init --backend-config=../env/backend.config`
+# クラウドアーキテクチャ
 
-2. 変更の確認
-   `terraform plan`
+<img width="1139" alt="スクリーンショット 2021-09-17 23 14 29" src="https://user-images.githubusercontent.com/48900966/133797453-fad2b053-7df5-4a09-88f3-642a3a09df1e.png">
 
-3. 適用
-   `terraform apply`
+
+バックエンドリポジトリ ： https://github.com/takeruun/animacom-back 
+
+フロントエンドリポジトリ ： https://github.com/takeruun/animacom-front
+
+# 使用技術
+- Ruby 2.7.1
+- Ruby on Rails 6.1.4.1
+- React 17.0.2
+- TypeScript 4.1.2
+- Docker 20.10.8
+- CircleCI
+- AWS
+  - VPC
+  - ECS
+    - Fargate
+  - ECR
+  - ALB
+  - RDS
+  - ElastiCache for Redis
+  - S3
+  - CloudFront
+  - ACM
+  - Route 53(ドメインはawsではないです)
+  -CloudWatch
+
+
+# テスト
+テストには、RSpec, Jestを使用しています。
+
+# CI/CD
+## バックエンド
+masterブランチにマージ → RSpecによるテスト通過 → ECRへイメージのプッシュ → ECSサービスのアップデートの実行をしています。
+<img width="1037" alt="スクリーンショット 2021-09-17 23 19 25" src="https://user-images.githubusercontent.com/48900966/133798209-c4a78358-597a-47db-aecf-0e64bcf272de.png">
+
+## フロントエンド
+masterブランチにマージ → Jestによるテスト通過 → ビルド → s3にアップデートの実行しています。
+<img width="1031" alt="スクリーンショット 2021-09-17 23 21 22" src="https://user-images.githubusercontent.com/48900966/133798445-929c99fc-ac1d-4112-8846-bf58c8f856bc.png">
+
 
 # 各ディレクトリ構成説明
 |ディレクト|説明|
