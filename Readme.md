@@ -46,7 +46,7 @@ masterブランチにマージ → RSpecによるテスト通過 → ECRへイ�
 <img width="1037" alt="スクリーンショット 2021-09-17 23 19 25" src="https://user-images.githubusercontent.com/48900966/133798209-c4a78358-597a-47db-aecf-0e64bcf272de.png">
 
 ### フロントエンド
-masterブランチにマージ → Jestによるテスト通過 → ビルド → s3にアップデートの実行しています。
+masterブランチにマージ → Jestによるテスト通過 → ビルド → s3アップロードの実行しています。
 <img width="1031" alt="スクリーンショット 2021-09-17 23 21 22" src="https://user-images.githubusercontent.com/48900966/133798445-929c99fc-ac1d-4112-8846-bf58c8f856bc.png">
 
 
@@ -62,4 +62,4 @@ masterブランチにマージ → Jestによるテスト通過 → ビルド �
 |network|vpc・subnet・route table など基本的なネットワーク構成の作成|
 |rds|RDS (MySql)の作成|
 |s3_images|画像を保存する S3 の作成 CloudFront 経由で見れるようにしている|
-|spa|CloudFront にてフロントを表示している|
+|spa|フロントを表示するCloudFrontの作成|
