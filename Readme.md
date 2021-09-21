@@ -58,7 +58,7 @@ masterブランチにマージ → Jestによるテスト通過 → ビルド �
 |ecs_rails|ECS Fargate で rails + nginx コンテナを作成|
 |elasticache_redis|Redis の作成|
 |env|環境変数の設定|
-|iam_role|iam_role を作成するためのモジュール|
+|iam_role|IAMロールを作成するためのモジュール|
 |network|vpc・subnet・route table など基本的なネットワーク構成の作成|
 |rds|RDS (MySql)の作成|
 |s3_images|画像を保存する S3 の作成 CloudFront 経由で見れるようにしている|
