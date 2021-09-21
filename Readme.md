@@ -3,8 +3,8 @@
 (開発中）
 
 # クラウドアーキテクチャ
+<img width="1124" alt="スクリーンショット 2021-09-21 23 09 29" src="https://user-images.githubusercontent.com/48900966/134186407-c6384f1a-3a23-4432-b70c-1afa40f35eaf.png">
 
-<img width="1139" alt="スクリーンショット 2021-09-17 23 14 29" src="https://user-images.githubusercontent.com/48900966/133797453-fad2b053-7df5-4a09-88f3-642a3a09df1e.png">
 
 
 バックエンドリポジトリ ： https://github.com/takeruun/animacom-back 
